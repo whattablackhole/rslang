@@ -1,4 +1,4 @@
-// import { HttpError } from "../Errors/HttpErrors";
+import { HttpError } from "../Errors/HttpErrors";
 import { Auth, NewToken, Settings as Settings, Statistic, User, UserWord, Word } from "../Types/Types";
 import { LocalStorAPI } from "./LocalStorAPI";
 
