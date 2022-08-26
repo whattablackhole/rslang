@@ -36,13 +36,13 @@ export class TestComponents {
       </ul>
     </nav>
   </div>`
-    
+
     const authMenu = document.querySelector('.app_login') as HTMLElement;
     authMenu.innerHTML = `<button class="login-btn">Вход</button>
     <button class="signIn-btn">Регистрация</button>`
 
 
-    
+
     const menuList = headerEl.querySelector(".menu_list") as HTMLElement;
     menuList.innerHTML = `<div class="menu">
       <nav>
@@ -69,7 +69,7 @@ export class TestComponents {
       menuElems.classList.toggle('active');
       menuBtn.classList.toggle('active');
       menu.classList.toggle('active');
-      
+
     })
 
     //headerEnd
@@ -108,7 +108,7 @@ export class TestComponents {
         </div>
       </div>
     </div>`
-      
+
     bodyEl.appendChild(mainEl);
     //MainEnd
 
@@ -146,7 +146,7 @@ export class TestComponents {
     <span class="developer4">
       <a href="https://github.com/nvfnvm">whattablackhole</a>
     </span>`
-    
+
     const rsLogo = document.querySelector('.rs_logo') as HTMLElement;
     rsLogo.innerHTML = `<a class="rs_link" href="https://rs.school/js-stage0/">
       <div class="rs_img"></div>

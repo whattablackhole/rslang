@@ -58,7 +58,7 @@ module.exports = ({ development }) => ({
     ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new new CopyPlugin({
+    new CopyPlugin({
       patterns: [
         { from: "./src/assets/img", to: "./" },
       ],
@@ -69,4 +69,4 @@ module.exports = ({ development }) => ({
     extensions: ['.ts', '.js'],
   },
   ...devServer(development)
-}); 
+});
