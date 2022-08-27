@@ -1,4 +1,4 @@
-import { Auth, UserStore } from "../Types/types";
+import { Auth, UserStore } from "../Types/Types";
 
 export class LocalStorAPI {
 
