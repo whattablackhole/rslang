@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+*.hidden {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -107,6 +111,7 @@ a:hover {
 .app_login {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 10px;
   gap: 10px;
   margin-left: 150px;

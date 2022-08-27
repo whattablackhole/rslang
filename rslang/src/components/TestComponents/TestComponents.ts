@@ -8,69 +8,69 @@ export class TestComponents {
     const bodyEl = document.body as HTMLBodyElement;
 
     // Header
-    const headerEl = document.createElement("header") as HTMLBodyElement;
-    headerEl.className = "header";
-    bodyEl.appendChild(headerEl);
+  //   const headerEl = document.createElement("header") as HTMLBodyElement;
+  //   headerEl.className = "header";
+  //   bodyEl.appendChild(headerEl);
 
-    const headerClassArr: Array<string> = ["app_logo", "header_menu", "app_login", "menu_list"];
-    for(let i = 0; i < headerClassArr.length; i++) {
-      const headerDivs = document.createElement("div") as HTMLElement;
-      headerDivs.className = headerClassArr[i];
-      headerEl.appendChild(headerDivs);
-    }
+  //   const headerClassArr: Array<string> = ["app_logo", "header_menu", "app_login", "menu_list"];
+  //   for(let i = 0; i < headerClassArr.length; i++) {
+  //     const headerDivs = document.createElement("div") as HTMLElement;
+  //     headerDivs.className = headerClassArr[i];
+  //     headerEl.appendChild(headerDivs);
+  //   }
 
-    const appLogo = headerEl.querySelector(".app_logo") as HTMLElement;
-    const logoImg = document.createElement("div") as HTMLElement;
-    logoImg.className = "img_app";
-    appLogo.appendChild(logoImg);
-
-
-    const headerMenu = document.querySelector('.header_menu') as HTMLElement;
-    headerMenu.innerHTML = `<div class="header_ennumeration">
-    <nav>
-      <ul class="menu_links">
-        <li><a href="#">Учебники</a></li>
-        <li><a href="#">Игры</a></li>
-        <li><a href="#">Статистика</a></li>
-        <li><a href="#">Настройка</a></li>
-      </ul>
-    </nav>
-  </div>`
-
-    const authMenu = document.querySelector('.app_login') as HTMLElement;
-    authMenu.innerHTML = `<button class="login-btn">Вход</button>
-    <button class="signIn-btn">Регистрация</button>`
+  //   const appLogo = headerEl.querySelector(".app_logo") as HTMLElement;
+  //   const logoImg = document.createElement("div") as HTMLElement;
+  //   logoImg.className = "img_app";
+  //   appLogo.appendChild(logoImg);
 
 
+  //   const headerMenu = document.querySelector('.header_menu') as HTMLElement;
+  //   headerMenu.innerHTML = `<div class="header_ennumeration">
+  //   <nav>
+  //     <ul class="menu_links">
+  //       <li><a href="#">Учебники</a></li>
+  //       <li><a href="#">Игры</a></li>
+  //       <li><a href="#">Статистика</a></li>
+  //       <li><a href="#">Настройка</a></li>
+  //     </ul>
+  //   </nav>
+  // </div>`
 
-    const menuList = headerEl.querySelector(".menu_list") as HTMLElement;
-    menuList.innerHTML = `<div class="menu">
-      <nav>
-        <ul>
-          <li><a href="#">Учебники</a></li>
-          <li><a href="#">Игры</a></li>
-          <li><a href="#">Статистика</a></li>
-          <li><a href="#">Настройка</a></li>
-        </ul>
-      </nav>
-    </div>`
-    const btnMenu = document.createElement("button") as HTMLElement;
-    btnMenu.innerHTML = `<div class="menu-btn">
-		  <span></span>
-		  <span></span>
-		  <span></span>
-	  </div>`
-    headerEl.appendChild(btnMenu);
+  //   const authMenu = document.querySelector('.app_login') as HTMLElement;
+  //   authMenu.innerHTML = `<button class="login-btn">Вход</button>
+  //   <button class="signIn-btn">Регистрация</button>`
 
-    const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
-    const menu = document.querySelector('.menu') as HTMLElement;
-    const menuElems = document.querySelector('.menu_list') as HTMLElement
-    menuBtn.addEventListener('click', function(){
-      menuElems.classList.toggle('active');
-      menuBtn.classList.toggle('active');
-      menu.classList.toggle('active');
 
-    })
+
+  //   const menuList = headerEl.querySelector(".menu_list") as HTMLElement;
+  //   menuList.innerHTML = `<div class="menu">
+  //     <nav>
+  //       <ul>
+  //         <li><a href="#">Учебники</a></li>
+  //         <li><a href="#">Игры</a></li>
+  //         <li><a href="#">Статистика</a></li>
+  //         <li><a href="#">Настройка</a></li>
+  //       </ul>
+  //     </nav>
+  //   </div>`
+  //   const btnMenu = document.createElement("button") as HTMLElement;
+  //   btnMenu.innerHTML = `<div class="menu-btn">
+	// 	  <span></span>
+	// 	  <span></span>
+	// 	  <span></span>
+	//   </div>`
+  //   headerEl.appendChild(btnMenu);
+
+  //   const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+  //   const menu = document.querySelector('.menu') as HTMLElement;
+  //   const menuElems = document.querySelector('.menu_list') as HTMLElement
+  //   menuBtn.addEventListener('click', function(){
+  //     menuElems.classList.toggle('active');
+  //     menuBtn.classList.toggle('active');
+  //     menu.classList.toggle('active');
+
+  //   })
 
     //headerEnd
 
