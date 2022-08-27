@@ -44,7 +44,7 @@ export class Authentication {
         <p class="form__text">
           ${prevLinkText} <a class="form__link form__link--bold" href="./" id="${linkId}">${linkText}</a>
         </p>
-        <button class="form__btn-closed" type="button">Х</button>
+        <div class="form__btn-closed"></div>
       </form>
     `;
   }
@@ -59,11 +59,13 @@ export class Authentication {
 
     if (!res) {
       elem.nextElementSibling?.classList.remove('hidden');
+      elem.classList.add('form__input--error');
       btn.disabled = true;
       return;
     }
 
     elem.nextElementSibling?.classList.add('hidden');
+    elem.classList.remove('form__input--error');
     const arrAllInputActiveForm = form?.querySelectorAll('.form__input:not(.hidden) + .form__input-error') || [];
     const result = [...arrAllInputActiveForm].every((el) => {
       const prevEl = el.previousElementSibling as HTMLInputElement;
