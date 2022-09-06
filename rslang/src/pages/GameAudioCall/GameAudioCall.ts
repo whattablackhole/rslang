@@ -1,5 +1,6 @@
 import { Loading } from "../../components/Loading/Loading";
 import { LearnWordsAPI } from "../../services/API/LearnWordsAPI";
+import { LocalStoreAPI } from "../../services/API/LocalStoreAPI";
 import { controlGameSprint, IWord } from "../../services/Types/Types";
 
 export class GameAudioCall {
@@ -14,6 +15,7 @@ export class GameAudioCall {
   points: number;
 
   learnWords = new LearnWordsAPI();
+  localStore = new LocalStoreAPI();
 
   constructor(
     private initialValue: {
@@ -197,12 +199,12 @@ export class GameAudioCall {
     const { wordTranslate } = this.arrWords[countPage][countWord];
     for (let i = 0; i < 4; i++) {
       if (i === randomNumber) {
-        result += `<button class="card-word__btn btn" type="button" data-check-translate="${wordTranslate}" id="btnAnwer-${i}">
+        result += `<button class="card-word__btn card-word__btn--audiocall btn" type="button" data-check-translate="${wordTranslate}" id="btnAnwer-${i}">
         <span>${i + 1}. </span>
         ${wordTranslate}
         </button>`;
       } else {
-        result += `<button class="card-word__btn btn" type="button" data-check-translate="${
+        result += `<button class="card-word__btn card-word__btn--audiocall btn" type="button" data-check-translate="${
           this.getRandomTranslate().wordTranslate
         }" id="btnAnwer-${i}"
         >
@@ -237,8 +239,9 @@ export class GameAudioCall {
 
     const arrAggrNoLearnedWords = [];
     while (cntPage >= 0) {
-      const noLearnedWordsOnPage =
-        await this.learnWords.getUserAggrNoLearnedWords(level, cntPage);
+      const noLearnedWordsOnPage = (this.localStore.checkAuthUser()) ?
+          await this.learnWords.getUserAggrNoLearnedWords(level, cntPage) :
+          await this.learnWords.getWordsAPI(level, page);
       arrAggrNoLearnedWords.push(noLearnedWordsOnPage);
       cntPage -= 1;
     }
@@ -336,7 +339,6 @@ export class GameAudioCall {
       popup.classList.remove("hidden");
 
       this.drawAnswersInPopup();
-      console.log("finish GAME");
     } catch (error) {
       console.log(error);
     }
@@ -345,7 +347,6 @@ export class GameAudioCall {
   private closeGame(): void {
     window.clearTimeout(this.timerFinish);
     window.clearInterval(this.timerClock);
-    console.log("close GAME");
   }
   /* ======================================================================================================== */
 
@@ -358,7 +359,6 @@ export class GameAudioCall {
       this.control.countPage += 1;
 
       if (this.control.countPage === maxPage) {
-        console.log("the words ended");
         return false;
       }
     }

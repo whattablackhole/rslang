@@ -1,5 +1,6 @@
 import { Loading } from '../../components/Loading/Loading';
 import { LearnWordsAPI } from '../../services/API/LearnWordsAPI';
+import { LocalStoreAPI } from '../../services/API/LocalStoreAPI';
 import { controlGameSprint, IWord } from '../../services/Types/Types';
 
 export class SprintGame {
@@ -15,6 +16,7 @@ export class SprintGame {
   points: number;
 
   learnWords = new LearnWordsAPI();
+  localStore = new LocalStoreAPI();
 
   constructor(private initialValue: {state: 'games' | 'textbook', level: number, page?: number}) {
     this.initialValue = initialValue;
@@ -45,8 +47,6 @@ export class SprintGame {
     this.arrWords = (this.initialValue.state === 'games') ?
       await this.getWordsFromCommonBase(this.initialValue.level) :
       await this.getWordsFromTextbook(this.initialValue.level, this.initialValue.page);
-
-    console.log(this.arrWords);
 
     if (!this.arrWords[0].length) {
       alert('На данной странице все слова изучены');
@@ -193,7 +193,10 @@ export class SprintGame {
 
     const arrAggrNoLearnedWords = [];
     while (cntPage >= 0) {
-      const noLearnedWordsOnPage = await this.learnWords.getUserAggrNoLearnedWords(level, cntPage);
+      const noLearnedWordsOnPage = (this.localStore.checkAuthUser()) ?
+            await this.learnWords.getUserAggrNoLearnedWords(level, cntPage) :
+            await this.learnWords.getWordsAPI(level, page);
+
       arrAggrNoLearnedWords.push(noLearnedWordsOnPage);
       cntPage -= 1;
     }
@@ -285,7 +288,6 @@ export class SprintGame {
       popup.classList.remove('hidden');
 
       this.drawAnswersInPopup();
-      console.log('finish GAME');
 
     } catch (error) {
       console.log(error);
@@ -295,7 +297,6 @@ export class SprintGame {
   private closeGame(): void {
     window.clearTimeout(this.timerFinish);
     window.clearInterval(this.timerClock);
-    console.log('close GAME');
   }
   /* ======================================================================================================== */
 
@@ -308,7 +309,6 @@ export class SprintGame {
       this.control.countPage += 1;
 
       if (this.control.countPage === maxPage) {
-        console.log('the words ended');
         return false;
       }
     }

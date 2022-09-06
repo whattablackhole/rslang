@@ -63,12 +63,14 @@ export class Header {
         (document.getElementById("formAuth") as HTMLElement).innerHTML =
           this.authentication.getFormHtml("login");
         document.getElementById("popupFormAuth")?.classList.remove("hidden");
+        document.body.classList.add('no-scroll');
       }
 
       if (elem.id === "registration") {
         (document.getElementById("formAuth") as HTMLElement).innerHTML =
           this.authentication.getFormHtml("registration");
         document.getElementById("popupFormAuth")?.classList.remove("hidden");
+        document.body.classList.add('no-scroll');
       }
 
       if (elem.closest("#logout")?.id === "logout") {

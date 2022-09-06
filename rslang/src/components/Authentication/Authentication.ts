@@ -165,6 +165,7 @@ export class Authentication {
 
     if (elem.closest('.form__btn-closed')) {
       document.querySelector('.popup__form-authentication')?.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
     }
 
     if (elem.classList.contains('form__link')) {
