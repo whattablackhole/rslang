@@ -197,12 +197,12 @@ export class GameAudioCall {
     const { wordTranslate } = this.arrWords[countPage][countWord];
     for (let i = 0; i < 4; i++) {
       if (i === randomNumber) {
-        result += `<button class="card-word__btn btn" type="button" data-check-translate="${wordTranslate}" id="btnAnwer-${i}">
+        result += `<button class="card-word__btn card-word__btn--audiocall btn" type="button" data-check-translate="${wordTranslate}" id="btnAnwer-${i}">
         <span>${i + 1}. </span>
         ${wordTranslate}
         </button>`;
       } else {
-        result += `<button class="card-word__btn btn" type="button" data-check-translate="${
+        result += `<button class="card-word__btn card-word__btn--audiocall btn" type="button" data-check-translate="${
           this.getRandomTranslate().wordTranslate
         }" id="btnAnwer-${i}"
         >
@@ -336,7 +336,6 @@ export class GameAudioCall {
       popup.classList.remove("hidden");
 
       this.drawAnswersInPopup();
-      console.log("finish GAME");
     } catch (error) {
       console.log(error);
     }
@@ -345,7 +344,6 @@ export class GameAudioCall {
   private closeGame(): void {
     window.clearTimeout(this.timerFinish);
     window.clearInterval(this.timerClock);
-    console.log("close GAME");
   }
   /* ======================================================================================================== */
 
@@ -358,7 +356,6 @@ export class GameAudioCall {
       this.control.countPage += 1;
 
       if (this.control.countPage === maxPage) {
-        console.log("the words ended");
         return false;
       }
     }

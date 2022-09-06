@@ -46,8 +46,6 @@ export class SprintGame {
       await this.getWordsFromCommonBase(this.initialValue.level) :
       await this.getWordsFromTextbook(this.initialValue.level, this.initialValue.page);
 
-    console.log(this.arrWords);
-
     if (!this.arrWords[0].length) {
       alert('На данной странице все слова изучены');
       window.history.back();
@@ -285,7 +283,6 @@ export class SprintGame {
       popup.classList.remove('hidden');
 
       this.drawAnswersInPopup();
-      console.log('finish GAME');
 
     } catch (error) {
       console.log(error);
@@ -295,7 +292,6 @@ export class SprintGame {
   private closeGame(): void {
     window.clearTimeout(this.timerFinish);
     window.clearInterval(this.timerClock);
-    console.log('close GAME');
   }
   /* ======================================================================================================== */
 
@@ -308,7 +304,6 @@ export class SprintGame {
       this.control.countPage += 1;
 
       if (this.control.countPage === maxPage) {
-        console.log('the words ended');
         return false;
       }
     }
