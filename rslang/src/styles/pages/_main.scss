@@ -1,0 +1,101 @@
+.main__container {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.015em;
+
+  @media screen and (max-width: $point_1-1) {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+}
+.left-main {
+  display: flex;
+  flex-direction: column;
+  max-width: 572px;
+
+  @media screen and (max-width: $point_1-1) {
+    max-width: 700px;
+    align-items: center;
+    text-align: center;
+    // flex-direction: column;
+  }
+}
+.left-main__top {
+  margin: 0 0 100px 0;
+
+  @media screen and (max-width: $point_1) {
+    margin: 0 0 50px 0;
+  }
+}
+.left-main__top > *:not(:last-child) {
+  margin: 0 0 40px 0;
+}
+.left-main__title {
+  font-family: "Titan One", serif;
+  font-weight: 400;
+  font-size: 69px;
+
+  @media screen and (max-width: $point_1) {
+    font-size: 45px;
+  }
+}
+.left-main__text {
+  font-size: 24px;
+  font-weight: 300;
+
+  @media screen and (max-width: $point_1) {
+    font-size: 20px;
+  }
+}
+.left-main__achievements-block {
+  display: flex;
+  max-width: 420px;
+}
+.achievements__item > *:not(:last-child) {
+  margin: 0 0 16px 0;
+}
+.achievements__left {
+  flex: 0 1 auto;
+  max-width: 195px;
+  padding: 0 40px 0 0;
+  border-right: 1px solid $primery_accent;
+
+  @media screen and (max-width: $point_1) {
+    padding: 0 20px 0 0;
+  }
+}
+.achievements__right {
+  flex: 1 1 auto;
+  padding: 0 0 0 40px;
+
+  @media screen and (max-width: $point_1) {
+    padding: 0 0 0 20px;
+  }
+}
+.achievements__title {
+  font-size: 36px;
+  font-weight: 300;
+  color: $primery_accent;
+}
+.achievements__text {
+  font-size: 20px;
+  font-weight: 300;
+}
+.right-main {
+  // height: 100%;
+  flex-grow: 1;;
+
+}
+.right-main__img-block {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // height: 100%;
+
+  @media screen and (max-width: $point_1-1) {
+    max-width: 800px;
+    // display: none;
+  }
+
+}

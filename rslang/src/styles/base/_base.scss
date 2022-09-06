@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Titan One";
+  src: url("../assets/resource/TitanOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/resource/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-regular";
+  src: url("../assets/resource/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-bold";
+  src: url("../assets/resource/Roboto-Bold.ttf");
+}
+
+
+body {
+  font-family: "Roboto", serif;
+  font-size: 1rem;
+  background-color: $bg;
+  color: $text;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+  padding: 40px 0;
+}
+
+[class *='__container'] {
+  max-width: 1590px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media screen and (max-width: $point_3) {
+    padding: 0 10px;
+  }
+}
+
+*.hidden {
+  display: none;
+}

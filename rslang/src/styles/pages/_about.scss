@@ -1,0 +1,81 @@
+.main {
+    justify-content: flex-start;
+}
+
+.main__title {
+    padding-bottom: 30px;
+    font-size: 24px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 1300px;
+    letter-spacing: 0.015em;
+}
+
+.card__wrapper {
+    display: flex;
+    max-width: 676px;
+    flex-basis: 49%;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 0px 10px;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.card__description {
+    padding: 24px 32px 24px 40px;
+    line-height: 1.5;
+}
+
+.card__status {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.card__text {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.about-avatar {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+.card__avatar {
+    display: flex;
+    align-items: center;
+}
+
+.git-blacked {
+    cursor: pointer;
+    display: block;
+    width: 35px;
+}
+
+.blacked {
+    color: antiquewhite;
+    background-color: black;
+}
+
+@media (max-width: 1120px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .card__container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

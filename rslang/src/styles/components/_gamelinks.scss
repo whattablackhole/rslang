@@ -1,0 +1,43 @@
+.wrapper__gamelinks-block {
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  padding: 40px 0;
+}
+
+.gamelinks-block__audiogame-block {
+  margin-right: 50px;
+}
+.gamelinks-block__audiogame-block,
+.gamelinks-block__sprintgame-block {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.gamelinks-block__audiogame-block.disable,
+.gamelinks-block__sprintgame-block.disable {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.gamelinks-block__audiogame-block.disable:hover,
+.gamelinks-block__sprintgame-block.disable:hover {
+  box-shadow: none;
+}
+.gamelinks-block__audiogame-block:hover,
+.gamelinks-block__sprintgame-block:hover {
+  box-shadow: 0px 4px 15px rgba(54, 54, 219, 0.2);
+}
+
+.gamelinks-block__audiogame-block > img,
+.gamelinks-block__sprintgame-block > img {
+  margin-right: 20px;
+}
+
+.audiogame-block__text,
+.sprintgame-block__text {
+  color: #000;
+}

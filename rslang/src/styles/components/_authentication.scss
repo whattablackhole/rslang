@@ -1,0 +1,107 @@
+.popup__form-authentication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.form {
+  width: 402px;
+  padding: 40px;
+  background-color: $white;
+  border-radius: 10px;
+  position: relative;
+}
+.form__title {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: $text;
+}
+.form__input-group {
+  margin-bottom: 15px;
+}
+.form__input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  margin: 0 0 5px 0;
+  background-color: $bg;
+  border: 0.5px solid $inactive;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  color: $text;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $lines;
+    background: $white;
+  }
+
+  &--error {
+    border: 1px solid $difficult_btn;
+  }
+
+
+}
+.form__input-error,
+.form__error {
+  font-size: 11px;
+  font-weight: 300;
+  color: $difficult_btn;
+}
+.form__error {
+  margin: 0 0 5px 0;
+  text-align: center;
+  font-weight: 700;
+}
+.form__btn {
+  width: 100%;
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: $primery_accent;
+  font-size: 16px;
+  color: $white;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: $primery_hover;
+  }
+
+  &:disabled {
+    cursor:no-drop;
+    background: $inactive;
+  }
+}
+.form__text {
+  font-style: 12px;
+  font-weight: 300;
+  text-align: center;
+  color: $text;
+}
+.form__link {
+  font-weight: 700;
+  color: $primery_accent
+}
+.form__btn-closed {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  z-index: 5;
+  cursor: pointer;
+}

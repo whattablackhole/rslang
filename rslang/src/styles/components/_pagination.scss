@@ -1,0 +1,74 @@
+.pagination-up,
+.pagination-down {
+  text-align: center;
+  margin: 44px 0;
+}
+
+.pagination-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  gap: 7px;
+
+  margin: 0 auto;
+}
+
+.pagination-content.hidden {
+  visibility: hidden;
+}
+
+.pagination-content li {
+  display: inline-block;
+}
+
+.pagination-content li button {
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.previous-page,
+.next-page {
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+  background-color: #fff;
+}
+.previous-page:hover:not(.disable),
+.next-page:hover:not(.disable) {
+  color: #3939ff;
+}
+.previous-page:hover:not(.disable) {
+  transform: translateX(-3px);
+}
+
+.next-page:hover:not(.disable) {
+  transform: translateX(3px);
+}
+
+.current-page,
+.dots {
+  background: #fff;
+  border: 0.5px solid #a6a6a6;
+  color: #39393b;
+}
+
+.current-page {
+  cursor: pointer;
+}
+.current-page:hover {
+  background-color: #3939ff;
+  color: #fff;
+}
+
+.page-button.--active {
+  background: #3636db;
+  color: #fff;
+}
+
+.disable {
+  color: #d9d9d9;
+  cursor: auto;
+}

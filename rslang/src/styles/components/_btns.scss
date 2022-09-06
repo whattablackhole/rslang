@@ -1,0 +1,64 @@
+.btn {
+  padding: 10px 20px;
+  border: 0.5px solid $lines;
+  background: $white;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  color: $text;
+  cursor: pointer;
+  transition: background 0.2s ease-in, color 0.2s ease-in;
+
+  &:hover {
+    color: $primery_hover;
+  }
+}
+
+.btn--primery {
+  border: none;
+  background: $primery_accent;
+  color: $white;
+
+  &:hover {
+    background: $primery_hover;
+    color: $white;
+  }
+}
+
+.btn--correct {
+  padding: 10px 30px;
+  border: none;
+  background: $correct;
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+.btn--incorrect {
+  border: none;
+  background: $difficult_btn;
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+.btn--big {
+  padding: 14px 20px;
+}
+
+.btn--img {
+  background-color: transparent;
+}

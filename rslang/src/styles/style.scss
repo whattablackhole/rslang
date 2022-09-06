@@ -1,0 +1,24 @@
+@import "./abstract/vars";
+
+@import "./base/base";
+@import "./base/reset";
+
+@import "./components/btns";
+@import "./components/burger";
+@import "./components/authentication";
+@import "./components/englishlevel";
+@import "./components/pagination";
+@import "./components/loader";
+@import "./components/item";
+@import "./components/gamelinks";
+
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./pages/main";
+@import "./pages/textbook";
+@import "./pages/games";
+@import "./pages/sprintGame";
+@import "./pages/about";
+@import "./pages/stat";
+

@@ -1,0 +1,113 @@
+.textbook__level-block {
+  position: sticky;
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  background: #fafafa;
+  border-radius: 20px;
+}
+
+.textbook__level {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.textbook__level > li {
+  gap: 10px;
+}
+
+.level__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.textbook__level > li:nth-child(1) > button {
+  background-color: #d9d9d9;
+}
+.textbook__level > li:nth-child(2) > button {
+  background-color: #f2a663;
+}
+.textbook__level > li:nth-child(3) > button {
+  background-color: #faaaba;
+}
+.textbook__level > li:nth-child(4) > button {
+  background-color: #88bfb0;
+}
+.textbook__level > li:nth-child(5) > button {
+  background-color: #60a4bf;
+}
+.textbook__level > li:nth-child(6) > button {
+  background-color: #59484d;
+}
+.textbook__level > li:nth-child(7) > button {
+  background-color: #a904b8;
+}
+
+.textbook__level > li:nth-child(1) > .--active {
+  box-shadow: 0 0 0 5px #d9d9d9;
+}
+.textbook__level > li:nth-child(2) > .--active {
+  box-shadow: 0 0 0 5px #f2a663;
+}
+.textbook__level > li:nth-child(3) > .--active {
+  box-shadow: 0 0 0 5px #faaaba;
+}
+.textbook__level > li:nth-child(4) > .--active {
+  box-shadow: 0 0 0 5px #88bfb0;
+}
+.textbook__level > li:nth-child(5) > .--active {
+  box-shadow: 0 0 0 5px #60a4bf;
+}
+.textbook__level > li:nth-child(6) > .--active {
+  box-shadow: 0 0 0 5px #59484d;
+}
+.textbook__level > li:nth-child(7) > .--active {
+  box-shadow: 0 0 0 5px #a904b8;
+}
+
+.level__button.--active {
+  border: 5px solid #fafafa;
+}
+.textbook__level > li:nth-child(1) > button:hover {
+  box-shadow: 0 0 0 5px #d9d9d9;
+}
+.textbook__level > li:nth-child(2) > button:hover {
+  box-shadow: 0 0 0 5px #f2a663;
+}
+.textbook__level > li:nth-child(3) > button:hover {
+  box-shadow: 0 0 0 5px #faaaba;
+}
+.textbook__level > li:nth-child(4) > button:hover {
+  box-shadow: 0 0 0 5px #88bfb0;
+}
+.textbook__level > li:nth-child(5) > button:hover {
+  box-shadow: 0 0 0 5px #60a4bf;
+}
+.textbook__level > li:nth-child(6) > button:hover {
+  box-shadow: 0 0 0 5px #59484d;
+}
+.textbook__level > li:nth-child(7) > button:hover {
+  box-shadow: 0 0 0 5px #a904b8;
+}
+
+.textbook__level > li > button:hover {
+  border: 5px solid #fafafa;
+  opacity: 0.8;
+}

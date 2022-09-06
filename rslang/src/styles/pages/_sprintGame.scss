@@ -1,0 +1,256 @@
+.game-sprint {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  background: url("../assets/img/sprint_bg.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  // @media screen and (max-width: $point_3) {
+  //   padding: 10px;
+  // }
+}
+.game-sprint__wrapper {
+  width: 520px;
+  padding: 20px;
+
+  // @media screen and (max-width: $point_4) {
+  //   width: 100%;
+  // }
+}
+.game-sprint__card-score {
+  padding: 20px 0;
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  color: $white;
+}
+.game-sprint__card-word {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background: $white;
+  outline: 3px solid transparent;
+}
+.card-word__top,
+.card-word__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-word__top {
+  margin: 0 0 20px 0;
+}
+.card-word__progress {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  padding: 10px 0 0 0;
+  margin: 0 0 50px 0;
+}
+.card-word__progress span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $inactive;
+  color: transparent;
+  font-size: 0;
+}
+.card-word__word-en {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: $black;
+}
+.card-word__word-ru {
+  margin: 0 0 30px 0;
+}
+.card-word__block-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 15px 0;
+}
+.card-word__btn {
+
+  &--audiocall {
+    flex: 0 1 45%;
+  }
+}
+.card-word__block-img-btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  margin: 0 0 20px 0;
+}
+
+.timer {
+  width: 82px;
+  height: 82px;
+  padding: 10px;
+  border: 3px solid $correct;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 10;
+
+  // @media screen and (max-width: $point_4) {
+  //   top: 10px;
+  //   left: 10px;
+  // }
+}
+.timer__count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: $primery_accent;
+  font-size: 32px;
+  font-weight: 900;
+  color: $white;
+}
+
+.game-sprint__close {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  z-index: 12;
+
+  & svg {
+    fill: $white;
+  }
+
+  & svg:hover path {
+    fill: $white;
+    transform: none;
+  }
+
+  // @media screen and (max-width: $point_4) {
+  //   top: 30px;
+  //   right: 30px;
+  // }
+}
+
+.game-sprint__popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  overflow-y: scroll;
+
+  &.hidden {
+    display: none;
+  }
+}
+.popup-sprint {
+  width: 440px;
+  padding: 25px 25px;
+  background: $white;
+  border-radius: 20px;
+  // margin: 0 0 30px 0;
+
+  // position: absolute;
+  // top: 160px;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // z-index: 11;
+
+  & > *:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  // @media screen and (max-width: $point_4) {
+  //   width: 80%;
+  //   // position: absolute;
+  //   // top: 160px;
+  //   // left: 50%;
+  //   // transform: translateX(-50%);
+  //   // z-index: 11;
+  // }
+}
+.popup-sprint__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+.popup-sprint__top-right {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+
+  & > *:not(:last-child) {
+    margin: 0 0 10px 0;
+  }
+}
+.popup-sprint__top-right span {
+  color: $correct;
+}
+.popup-sprint__middle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-height: 290px;
+  padding: 20px;
+  background: $bg;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+.popup-sprint__cnt {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+
+  &--correct {
+    color: $correct;
+  }
+
+  &--incorrect {
+    color: $difficult_btn;
+  }
+}
+.popup-sprint__word {
+  margin: 0 0 10px 0;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  & span {
+    color: $primery_accent;
+  }
+}
+.popup-sprint__btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  width: 235px;
+  margin: 0 auto;
+}
+.popup-sprint__btn-exit,
+.popup-sprint__btn-relay {
+  width: 100%;
+}
