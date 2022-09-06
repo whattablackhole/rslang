@@ -1,5 +1,6 @@
 import { Loading } from '../../components/Loading/Loading';
 import { LearnWordsAPI } from '../../services/API/LearnWordsAPI';
+import { LocalStoreAPI } from '../../services/API/LocalStoreAPI';
 import { controlGameSprint, IWord } from '../../services/Types/Types';
 
 export class SprintGame {
@@ -15,6 +16,7 @@ export class SprintGame {
   points: number;
 
   learnWords = new LearnWordsAPI();
+  localStore = new LocalStoreAPI();
 
   constructor(private initialValue: {state: 'games' | 'textbook', level: number, page?: number}) {
     this.initialValue = initialValue;
@@ -191,7 +193,10 @@ export class SprintGame {
 
     const arrAggrNoLearnedWords = [];
     while (cntPage >= 0) {
-      const noLearnedWordsOnPage = await this.learnWords.getUserAggrNoLearnedWords(level, cntPage);
+      const noLearnedWordsOnPage = (this.localStore.checkAuthUser()) ?
+            await this.learnWords.getUserAggrNoLearnedWords(level, cntPage) :
+            await this.learnWords.getWordsAPI(level, page);
+
       arrAggrNoLearnedWords.push(noLearnedWordsOnPage);
       cntPage -= 1;
     }

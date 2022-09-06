@@ -1,5 +1,6 @@
 import { Loading } from "../../components/Loading/Loading";
 import { LearnWordsAPI } from "../../services/API/LearnWordsAPI";
+import { LocalStoreAPI } from "../../services/API/LocalStoreAPI";
 import { controlGameSprint, IWord } from "../../services/Types/Types";
 
 export class GameAudioCall {
@@ -14,6 +15,7 @@ export class GameAudioCall {
   points: number;
 
   learnWords = new LearnWordsAPI();
+  localStore = new LocalStoreAPI();
 
   constructor(
     private initialValue: {
@@ -237,8 +239,9 @@ export class GameAudioCall {
 
     const arrAggrNoLearnedWords = [];
     while (cntPage >= 0) {
-      const noLearnedWordsOnPage =
-        await this.learnWords.getUserAggrNoLearnedWords(level, cntPage);
+      const noLearnedWordsOnPage = (this.localStore.checkAuthUser()) ?
+          await this.learnWords.getUserAggrNoLearnedWords(level, cntPage) :
+          await this.learnWords.getWordsAPI(level, page);
       arrAggrNoLearnedWords.push(noLearnedWordsOnPage);
       cntPage -= 1;
     }
